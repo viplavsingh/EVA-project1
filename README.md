@@ -1,26 +1,17 @@
 # EVA-project1
 
-1. What are Channels and Kernels?
-Ans:
-Channels are the combinations of a feature extractor. For instance, in a bowl of biryani, we have several ingredients like rice, peas,
-cloves etc. These are the features of the final product. The collection of all the values of a feature is called a channel for that feature. In the example of Biryani, collection of all the peas can be called as a peas channel. So, a image can be composed of many channels.
+### 1. What are Channels and Kernels?
+- Channels are the combinations of a feature extractor. For instance, in a bowl of biryani, we have several ingredients like rice, peas, cloves etc. These are the features of the final product. The collection of all the values of a feature is called a channel for that feature. In the example of Biryani, collection of all the peas can be called as a peas channel. So, a image can be composed of many channels.
 
-Kernels are the feature extractor. Kernel is basically a 3x3 matrix and also known as filter. 
-Kernels are the 3x3 matrix with values initialised which are then convoled over an image. The image pixel values are multiplied
-element wise with the kernel values that are placed above it. The kernel is moved over the whole image horizontally and the vertically by a pixel each time, which is called stride. After applying the convolution, output image is generated which can be edges, patterns, parts of object, objects or scenes based on the layer of convolution we are operating on.
+ - Kernels are the feature extractor. Kernel is basically a 3x3 matrix and also known as filter. Kernels are the 3x3 matrix with values initialised which are then convoled over an image. The image pixel values are multiplied element wise with the kernel values that are placed above it. The kernel is moved over the whole image horizontally and the vertically by a pixel each time, which is called stride. After applying the convolution, output image is generated which can be edges, patterns, parts of object, objects or scenes based on the layer of convolution we are operating on.
 
 
-2. Why should we only (well mostly) use 3x3 Kernels?
-Ans:
-3x3 falls under odd number pixels. Reason for not using even number pixels is it is very dificult to create something which is symmetric
-using even number pixels. There is no concept of middle and then we lose on symmetric aspect. 
-Now having ruled out the possibility of using even number pixels, we can use odd no of pixels like 3x3, 5x5, 7x7 etc. But we mostly use
-3x3. 5x5 can be convoled using two 3x3 kernel and we avoid using so many parameters. So when we use 5x5 kernel in a layer, we use 25 parameters whereas if we use two 3x3 conv layer, we only use 18 parameter and thus we save using lot of parameters. Same goes for 7x7.
+### 2. Why should we only (well mostly) use 3x3 Kernels?
 
-Also 3x3 is heavily optimised now and a lot of architectural changes have gone into optimizing for 3x3.
+- 3x3 falls under odd number pixels. Reason for not using even number pixels is it is very dificult to create something which is symmetric using even number pixels. There is no concept of middle and then we lose on symmetric aspect. Now having ruled out the possibility of using even number pixels, we can use odd no of pixels like 3x3, 5x5, 7x7 etc. But we mostly use 3x3. 5x5 can be convoled using two 3x3 kernel and we avoid using so many parameters. So when we use 5x5 kernel in a layer, we use 25 parameters whereas if we use two 3x3 conv layer, we only use 18 parameter and thus we save using lot of parameters. Same goes for 7x7. Also 3x3 is heavily optimised now and a lot of architectural changes have gone into optimizing for 3x3.
 
 
-3. How many times do we need to perform 3x3 convolution operation to reach 1x1 from 199x199 (show calculations)
+### 3. How many times do we need to perform 3x3 convolution operation to reach 1x1 from 199x199 (show calculations)
 Ans: 99 times
 199x199 | (3x3 conv1) |
 197x197 | (3x3 conv2) |
