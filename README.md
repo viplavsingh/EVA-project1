@@ -13,6 +13,9 @@
 
 ### 3. How many times do we need to perform 3x3 convolution operation to reach 1x1 from 199x199 (show calculations)
 Ans: 99 times
+
+| Layers | Conv         |
+| ------ | ------       |
 |199x199 | (3x3 conv1)  |
 |197x197 | (3x3 conv2)  |
 |195x195 | (3x3 conv3)  |
